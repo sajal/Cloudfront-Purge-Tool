@@ -142,14 +142,6 @@ var updateinvalidations = function(invals){
     ol.appendChild(box);
     invalidations.appendChild(ol);
 
-    var searchobjlist = function(list, id){
-      for(k=0;k<list.length;k++){
-        if (list[k].id == id){
-          return k
-        } 
-      }
-      return -1
-    }
     var indexcur = searchobjlist(pendinginvalidations, invals[i].Id["#text"]);
     if (invals[i].Status["#text"] == "Completed"){
       
@@ -188,6 +180,16 @@ var updateinvalidations = function(invals){
     //cfobj.getAllInvalidations(id, updateinvalidations);
   });
 }
+
+var searchobjlist = function(list, id){
+  for(k=0;k<list.length;k++){
+    if (list[k].id == id){
+      return k
+    } 
+  }
+  return -1
+}
+
 
 
 var auth = function(){
