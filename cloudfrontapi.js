@@ -72,7 +72,15 @@ var cloudfrontapi = function(aws_access, aws_secret){
       req.setRequestHeader("Content-Type", "text/xml");
     }
     req.onload = function(){
-      callback(req);
+      console.log(req);
+      var error = null;
+      if (req.status != 200){
+        error = {
+          status:req.status,
+          message: req.responseXML.getElementsByTagName("Message")[0].textContent
+        }
+      }
+      callback(req, error);
     };
     req.send(data);
   }
@@ -83,19 +91,22 @@ var cloudfrontapi = function(aws_access, aws_secret){
     return node.getElementsByTagName(tagname)[0].textContent
   }
 
-  this.getAllDistributions = function(callback){
+  this.getAllDistributions = function(callback, errorfn){
     /*
     Returns Array : List of CloudFront distributions.
     */
     var getfield = this.getfield;
-    var localcb = function(res){
-      var distributions = xmlToJson(res.responseXML).DistributionList.DistributionSummary;
-      if (distributions.length == undefined){
-        distributions = [distributions];
+    var localcb = function(res, error){
+      console.log(error)
+      if (error == null){
+        var distributions = xmlToJson(res.responseXML).DistributionList.DistributionSummary;
+        if (distributions.length == undefined){
+          distributions = [distributions];
+        }
+        callback(distributions);
       }
-      callback(distributions);
     };
-    this.makeRequest("/2010-11-01/distribution", function(res){ localcb(res) })
+    this.makeRequest("/2010-11-01/distribution", function(res, error){ localcb(res, error) })
   };
 
   this.getAllInvalidations = function(distid, callback){
