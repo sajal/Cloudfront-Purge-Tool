@@ -2,6 +2,35 @@
 window.pendinginvalidations = [];
 
 
+
+var croncheck = function(){
+  // checks pengind invalidations every minute
+  var cb = function(res){
+    console.log(res);
+    if(res.Invalidation.Status["#text"] == "Completed"){
+      var id = res.Invalidation.Id["#text"];
+      var index = searchobjlist(pendinginvalidations, id);
+      //show notification
+      var notification = webkitNotifications.createNotification(
+        'icon.png',  // icon url - can be relative
+        'Purge Completed!' ,  // notification title
+        'ID: ' + id // notification body text
+      );
+      notification.show();
+      //refresh current invals.. just in case
+      cfobj.getAllInvalidations(currentdist, updateinvalidations);
+      //delete
+      if (index != -1){
+        pendinginvalidations.splice(index, 1);
+      }
+    }
+  }
+  for(i=0;i<pendinginvalidations.length;i++){
+    cfobj.getInvalidationDetails(pendinginvalidations[i].distid, pendinginvalidations[i].id, cb);
+  }
+  setTimeout(croncheck, 10000);
+}
+
 var distributionclickhandler = function(distid){
   if (typeof(distid) == "string"){
     var id = distid;
@@ -194,6 +223,7 @@ var auth = function(){
     var loginbox = document.getElementById("auth")
     loginbox.style.display="none";
     updatedistlist(dist);
+    croncheck();
   }
 
   cfobj.getAllDistributions(success, function(error){
