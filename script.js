@@ -51,6 +51,7 @@ var invaldetails = function(){
 var placepurgereq = function(box){
   document.getElementById("invalspinner").style.display = "";
   var flist = document.getElementById("csvpathlist").value;
+  document.getElementById("invalerror").innerHTML = "";
   console.log(flist);
   console.log(currentdist);
   var errorhandler = function(error){
