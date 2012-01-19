@@ -153,10 +153,17 @@ var auth = function(){
   window.cfobj = new cloudfrontapi(access, secret);
   localStorage.access=access;
   localStorage.secret=secret;
-  //hide the login box
-  var loginbox = document.getElementById("auth")
-  loginbox.style.display="none";
-  cfobj.getAllDistributions(updatedistlist);
+
+  var success = function(dist){
+    //hide the login box
+    var loginbox = document.getElementById("auth")
+    loginbox.style.display="none";
+    updatedistlist(dist);
+  }
+
+  cfobj.getAllDistributions(success, function(error){
+    document.getElementById("loginerror").innerHTML = error.message;
+  });
 }
 
 

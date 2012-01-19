@@ -104,6 +104,8 @@ var cloudfrontapi = function(aws_access, aws_secret){
           distributions = [distributions];
         }
         callback(distributions);
+      } else {
+        errorfn(error);
       }
     };
     this.makeRequest("/2010-11-01/distribution", function(res, error){ localcb(res, error) })
