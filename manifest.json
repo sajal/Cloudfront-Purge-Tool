@@ -2,6 +2,7 @@
   "name": "Cloudfront Purge Tool",
   "version": "0.1",
   "description": "Purges assets from cloudfront.",
+  "default_icon": "128.png",
   "icons": {
     "16": "16.png",
     "48": "48.png",
