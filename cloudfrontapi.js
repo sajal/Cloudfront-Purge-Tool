@@ -48,8 +48,9 @@ var cloudfrontapi = function(aws_access, aws_secret){
 
   this.getAuth = function(){
     var datestr = this.getDate();
-    var signature = sha1.hmac.toB64(this.aws_secret, datestr);
-    var authorization = "AWS " + this.aws_access + ":" + signature + "="; // no idea why i gotta manually add = but this shit works
+    //var signature = sha1.hmac.toB64(this.aws_secret, datestr);
+    var signature = Crypto.util.bytesToBase64(Crypto.HMAC(Crypto.SHA1, datestr, this.aws_secret, { asBytes: true }));
+    var authorization = "AWS " + this.aws_access + ":" + signature;
     return {datestr: datestr, authorization:authorization}
   };
 
