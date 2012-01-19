@@ -24,6 +24,7 @@ var placepurgereq = function(box){
   }
   cfobj.AddNewPurgeRequest(currentdist, flist, function(res){
     console.log(res);
+    document.getElementById("csvpathlist").value = "";
     distributionclickhandler(currentdist);
   }, errorhandler );
 }
