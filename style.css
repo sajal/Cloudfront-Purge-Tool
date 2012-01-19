@@ -85,12 +85,12 @@ h3  { margin:0; font-size:1.2em; font-weight:bold; }
 
 #container { width:100%; margin:10px; display:table; }
 #row  { display:table-row; }
-.column { display:table-cell; padding:5px; border:#ddd 1px solid; border:none;}
+.column { display:table-cell; padding:5px 5px 5px 0; border:#ddd 1px solid; border:none;}
 
 #distlist .ui-selecting { background:#eee; }
 #distlist .ui-selected { background:#eee; }
 #distlist { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-.distbox { margin-top:5px; }
+.distbox { margin-top:5px; padding:3px; }
 .distbox .id { color:#EF621A; }
 .distbox .cnames { margin-left:0px; }
 
