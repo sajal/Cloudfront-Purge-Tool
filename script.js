@@ -209,6 +209,7 @@ var searchobjlist = function(list, id){
 var auth = function(){
   var secret = document.getElementById("AWSsecret").value
   var access = document.getElementById("AWSaccess").value
+  document.getElementById("loginspinner").style.display = "";
   window.cfobj = new cloudfrontapi(access, secret);
   localStorage.savebox = document.getElementById("savecredentials").checked;
   if (document.getElementById("savecredentials").checked){
@@ -222,6 +223,7 @@ var auth = function(){
 
   var success = function(dist){
     //hide the login box
+    document.getElementById("loginspinner").style.display = "none";
     var loginbox = document.getElementById("auth")
     loginbox.style.display="none";
     updatedistlist(dist);
@@ -229,6 +231,7 @@ var auth = function(){
   }
 
   cfobj.getAllDistributions(success, function(error){
+    document.getElementById("loginspinner").style.display = "none";
     document.getElementById("loginerror").innerHTML = error.message;
   });
 }
