@@ -85,7 +85,7 @@ h3  { margin:0; font-size:1.2em; font-weight:bold; }
 
 #container { width:100%; margin:10px; display:table; }
 #row  { display:table-row; }
-.column { display:table-cell; padding:5px; border:#ddd 1px solid; }
+.column { display:table-cell; padding:5px; border:#ddd 1px solid; border:none;}
 
 #distlist .ui-selecting { background:#FECA40; }
 #distlist .ui-selected { background:#F39814; color:white; }
