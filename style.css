@@ -78,7 +78,7 @@ h3  { margin:0; font-size:1.2em; font-weight:bold; }
 .signin-label { margin:3px 0; font-weight:bold; }
 .signin-text { width:400px; height:30px; margin:0px 0; padding:3px; font-size:1em;}
 #auth input[type="submit"] { width:100px; height:30px; background-color:#690; }
-#auth input[type="submit"] { width:100px; height:32px; display:block; margin-bottom:0px; margin-right:6px; padding:6px 3px; border:none; color:#FFF; font-weight:bold; font-size: 100%; background-color:#690; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
+#auth input[type="submit"] { width:100px; height:32px; display:block; margin-bottom:0px; margin-right:6px; padding:6px 3px; border:none; color:#FFF; font-weight:bold; font-size: 1.3em; background-color:#690; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
 #auth input[type="submit"]:hover { background-color: #1c778a; }
 #auth input[type="submit"]:focus { background-color:#1c778a; }
 #auth input[type="submit"]:active { position:relative; top:1px; }
