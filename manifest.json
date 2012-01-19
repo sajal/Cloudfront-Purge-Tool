@@ -1,0 +1,18 @@
+{
+  "name": "Cloudfront Purge Tool",
+  "version": "0.1",
+  "description": "Purges assets from cloudfront.",
+  "app": {
+    "launch": {
+      "local_path": "popup.html"
+    }
+  },
+//  "browser_action": {
+//    "default_icon": "icon.png",
+//    "popup": "popup.html"
+//  },
+  "permissions": [
+    "http://cloudfront.amazonaws.com/",
+    "https://cloudfront.amazonaws.com/"
+  ]
+}

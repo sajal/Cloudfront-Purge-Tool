@@ -1,0 +1,43 @@
+
+#container {
+    display: table;
+    width:100%;
+    }
+  #row  {
+    display: table-row;
+    }
+
+  .column {
+    display: table-cell;
+    border:solid;
+    }
+
+  #distlist .ui-selecting { background: #FECA40; }
+  #distlist .ui-selected { background: #F39814; color: white; }
+  #distlist { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+
+  #invallist .ui-selecting { background: #FECA40; }
+  #invallist .ui-selected { background: #F39814; color: white; }
+  #invallist { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+
+
+  /* #distlist li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }*/
+
+.distbox {
+  width:300px;
+}
+.invalbox {
+  width:200px;
+}
+
+#newinval {
+  width:100%;
+}
+
+.Completed{
+  color:green;
+}
+
+.InProgress{
+  color:red;
+}
