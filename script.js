@@ -1,3 +1,7 @@
+
+window.pendinginvalidations = [];
+
+
 var distributionclickhandler = function(distid){
   if (typeof(distid) == "string"){
     var id = distid;
@@ -137,7 +141,42 @@ var updateinvalidations = function(invals){
     //box.onclick = invaldetails;
     ol.appendChild(box);
     invalidations.appendChild(ol);
+
+    var searchobjlist = function(list, id){
+      for(k=0;k<list.length;k++){
+        if (list[k].id == id){
+          return k
+        } 
+      }
+      return -1
+    }
+    var indexcur = searchobjlist(pendinginvalidations, invals[i].Id["#text"]);
+    if (invals[i].Status["#text"] == "Completed"){
+      
+      if (indexcur != -1){
+        // current invalidation was pending earlier, but Completed now
+        // Remove from pending
+        pendinginvalidations.splice(indexcur, 1);
+        // Now Notify user
+        
+        var notification = webkitNotifications.createNotification(
+          'icon.png',  // icon url - can be relative
+          'Purge Completed!' ,  // notification title
+          'ID: ' + invals[i].Id["#text"] // notification body text
+        );
+        notification.show();
+        
+      }
+      
+    } else if (invals[i].Status["#text"] == "InProgress"){
+      // current invalidation is in progress
+      if (indexcur == -1){
+        //current invalidation was not discovered earlier
+        pendinginvalidations.push({id: invals[i].Id["#text"], distid:window.currentdist.toString()});
+      }
+    }
   }
+
   invalidations.style.display = "";
   document.getElementById("newinval").style.display = "";
   $( "#invallist" ).selectable();
