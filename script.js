@@ -161,13 +161,14 @@ var auth = function(){
 
 
 $(document).ready(function() {
-
+  /*
   var notification = webkitNotifications.createNotification(
     'icon.png',  // icon url - can be relative
     'Hello World!',  // notification title
     'Welcome to this extension...'  // notification body text
   );
   notification.show();
+  */
   var access = localStorage.access;
   var secret = localStorage.secret;
   if ((access != undefined) && (secret != undefined)){
