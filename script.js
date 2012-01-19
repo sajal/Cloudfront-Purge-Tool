@@ -49,13 +49,16 @@ var invaldetails = function(){
 }
 
 var placepurgereq = function(box){
+  document.getElementById("invalspinner").style.display = "";
   var flist = document.getElementById("csvpathlist").value;
   console.log(flist);
   console.log(currentdist);
   var errorhandler = function(error){
+    document.getElementById("invalspinner").style.display = "none";
     document.getElementById("invalerror").innerHTML = error.message;
   }
   cfobj.AddNewPurgeRequest(currentdist, flist, function(res){
+    document.getElementById("invalspinner").style.display = "none";
     console.log(res);
     document.getElementById("csvpathlist").value = "";
     distributionclickhandler(currentdist);
