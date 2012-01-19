@@ -147,12 +147,16 @@ var cloudfrontapi = function(aws_access, aws_secret){
     this.getAllInvalidations(distid, localcb);
   };
 
-  this.AddNewPurgeRequest = function(distid, pathcsv, callback){
+  this.AddNewPurgeRequest = function(distid, pathcsv, callback, errorfn){
     /*
     Places a purge request for comma seperated list of paths.
     */
-    var localcb = function(res){
-      callback(res);
+    var localcb = function(res, error){
+      if (error == null){
+        callback(res);
+      } else {
+        errorfn(error);
+      }
     }
     var files = pathcsv.split(',');
     var invallist = "";

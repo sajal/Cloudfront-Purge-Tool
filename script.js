@@ -19,10 +19,13 @@ var placepurgereq = function(box){
   var flist = document.getElementById("csvpathlist").value;
   console.log(flist);
   console.log(currentdist);
+  var errorhandler = function(error){
+    document.getElementById("invalerror").innerHTML = error.message;
+  }
   cfobj.AddNewPurgeRequest(currentdist, flist, function(res){
     console.log(res);
     distributionclickhandler(currentdist);
-  });
+  }, errorhandler );
 }
 
 var updateinvaldetails = function(obj){
