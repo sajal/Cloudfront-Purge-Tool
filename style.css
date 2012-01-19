@@ -87,9 +87,12 @@ h3  { margin:0; font-size:1.2em; font-weight:bold; }
 #row  { display:table-row; }
 .column { display:table-cell; padding:5px; border:#ddd 1px solid; border:none;}
 
-#distlist .ui-selecting { background:#FECA40; }
-#distlist .ui-selected { background:#F39814; color:white; }
+#distlist .ui-selecting { background:#eee; }
+#distlist .ui-selected { background:#eee; }
 #distlist { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+.distbox { margin-top:5px; }
+.distbox .id { color:#EF621A; }
+.distbox .cnames { margin-left:0px; }
 
 #invallist .ui-selecting { background:#FECA40; }
 #invallist .ui-selected { background:#F39814; color:white; }

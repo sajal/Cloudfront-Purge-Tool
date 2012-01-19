@@ -64,9 +64,11 @@ var updatedistlist = function(dist){
     box.classList.add("ui-widget-content");
     var el = document.createElement('div');
     el.className = "id";
+    /*el.innerHTML += "id: ";*/
     el.appendChild(document.createTextNode(dist[i].Id["#text"]));
     var cname = document.createElement('div');
-    cname.className = "cnames";
+    /*cname.className = "cnames";
+    cname.innerHTML += "CNAMES: <br>";*/
 
     var cn = document.createElement('div');
     cn.className = "cname";
