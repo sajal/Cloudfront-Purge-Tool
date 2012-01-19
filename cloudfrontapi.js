@@ -80,6 +80,7 @@ var cloudfrontapi = function(aws_access, aws_secret){
           message: req.responseXML.getElementsByTagName("Message")[0].textContent
         }
       }
+      console.log(error);
       callback(req, error);
     };
     req.send(data);
