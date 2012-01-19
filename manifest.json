@@ -3,7 +3,7 @@
   "version": "0.1",
   "description": "Purges assets from cloudfront.",
   "icons": {
-    "128": "icon.png"
+    "128": "icon2.png"
   },
   "app": {
     "launch": {
