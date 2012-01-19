@@ -143,24 +143,7 @@ var updateinvalidations = function(invals){
     invalidations.appendChild(ol);
 
     var indexcur = searchobjlist(pendinginvalidations, invals[i].Id["#text"]);
-    if (invals[i].Status["#text"] == "Completed"){
-      
-      if (indexcur != -1){
-        // current invalidation was pending earlier, but Completed now
-        // Remove from pending
-        pendinginvalidations.splice(indexcur, 1);
-        // Now Notify user
-        
-        var notification = webkitNotifications.createNotification(
-          'icon.png',  // icon url - can be relative
-          'Purge Completed!' ,  // notification title
-          'ID: ' + invals[i].Id["#text"] // notification body text
-        );
-        notification.show();
-        
-      }
-      
-    } else if (invals[i].Status["#text"] == "InProgress"){
+    if (invals[i].Status["#text"] == "InProgress"){
       // current invalidation is in progress
       if (indexcur == -1){
         //current invalidation was not discovered earlier
