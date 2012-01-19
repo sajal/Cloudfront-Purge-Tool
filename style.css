@@ -65,7 +65,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* header */
 .container, header, { margin:0 auto; overflow:hidden; }	
 .container  { width:100%; }
-.cont-header { border-top:#4cb0c6 3px solid; background-color:#FFF; overflow:hidden; }
+.cont-header { border-top:#4cb0c6 3px solid; border-bottom:#eee 1px solid; background-color:#FFF; overflow:hidden; }
 header { padding:10px; }
 header	{ line-height:1.8em; vertical-align:middle; overflow:hidden;  }
 .header-left	{ float:left; margin-bottom:0px; }
