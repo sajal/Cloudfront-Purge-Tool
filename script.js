@@ -140,6 +140,8 @@ var updatedistlist = function(dist){
     id = ui.selected.getElementsByClassName("id")[0].innerHTML;
     window.currentdist = id;
     cfobj.getAllInvalidations(id, updateinvalidations);
+    document.getElementById("invalidations").innerHTML = '<span id="invallistspinner" >imagine me spinning</span>';
+
   });
 
 }
@@ -147,6 +149,7 @@ var updatedistlist = function(dist){
 var updateinvalidations = function(invals){
   console.log(invals);
   var invalidations = document.getElementById("invalidations");
+  invalidations.style.display = "";
   //remove all childrens if exists
   if ( invalidations.hasChildNodes() ){
     while ( invalidations.childNodes.length >= 1 ){
@@ -186,7 +189,6 @@ var updateinvalidations = function(invals){
     }
   }
 
-  invalidations.style.display = "";
   document.getElementById("newinval").style.display = "";
   $( "#invallist" ).selectable();
   $( "#invallist" ).bind( "selectableselected", function(event, ui) {
