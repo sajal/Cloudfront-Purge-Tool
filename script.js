@@ -155,8 +155,15 @@ var auth = function(){
   var secret = document.getElementById("AWSsecret").value
   var access = document.getElementById("AWSaccess").value
   window.cfobj = new cloudfrontapi(access, secret);
-  localStorage.access=access;
-  localStorage.secret=secret;
+
+  if (document.getElementById("savecredentials").checked){
+    localStorage.access=access;
+    localStorage.secret=secret;
+  } else {
+    //delete previously saved creds if any
+    localStorage.access="";
+    localStorage.secret="";
+  }
 
   var success = function(dist){
     //hide the login box
