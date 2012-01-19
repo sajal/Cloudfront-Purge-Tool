@@ -58,7 +58,12 @@ table { border-collapse: collapse; border-spacing: 0; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-#auth { margin:20px; }
+/* Remove styles from jQuery UI */
+.ui-widget-header { border:none; background:none; color:#000; }
+.ui-widget-content { background:none; }
+
+h3  { margin:0; font-size:1.2em; font-weight:bold; }
+#auth { margin:10px; }
 .signin { margin:15px 0; }
 .signin-label { margin:3px 0; font-weight:bold; }
 .signin-text { width:400px; height:30px; margin:0px 0; padding:3px; font-size:1em;}
@@ -68,17 +73,17 @@ table { border-collapse: collapse; border-spacing: 0; }
 #auth input[type="submit"]:focus { background-color:#1c778a; }
 #auth input[type="submit"]:active { position:relative; top:1px; }
 
-#container { display:table; width:100%; }
-#row  { display: table-row; }
-.column { display: table-cell; border:#ddd 1px solid; }
+#container { width:100%; margin:10px; display:table; }
+#row  { display:table-row; }
+.column { display:table-cell; border:#ddd 1px solid; }
 
-#distlist .ui-selecting { background: #FECA40; }
-#distlist .ui-selected { background: #F39814; color: white; }
+#distlist .ui-selecting { background:#FECA40; }
+#distlist .ui-selected { background:#F39814; color:white; }
 #distlist { list-style-type: none; margin: 0; padding: 0; width: 60%; }
 
-#invallist .ui-selecting { background: #FECA40; }
-#invallist .ui-selected { background: #F39814; color: white; }
-#invallist { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#invallist .ui-selecting { background:#FECA40; }
+#invallist .ui-selected { background:#F39814; color:white; }
+#invallist { list-style-type:none; margin:0; padding:0; width:60%; }
 
 
 /* #distlist li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }*/
