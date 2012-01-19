@@ -13,6 +13,7 @@
 //  },
   "permissions": [
     "http://cloudfront.amazonaws.com/",
-    "https://cloudfront.amazonaws.com/"
+    "https://cloudfront.amazonaws.com/",
+    "notifications"
   ]
 }
