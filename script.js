@@ -155,7 +155,7 @@ var auth = function(){
   var secret = document.getElementById("AWSsecret").value
   var access = document.getElementById("AWSaccess").value
   window.cfobj = new cloudfrontapi(access, secret);
-
+  localStorage.savebox = document.getElementById("savecredentials").checked;
   if (document.getElementById("savecredentials").checked){
     localStorage.access=access;
     localStorage.secret=secret;
@@ -189,6 +189,7 @@ $(document).ready(function() {
   */
   var access = localStorage.access;
   var secret = localStorage.secret;
+  document.getElementById("savecredentials").checked = localStorage.savebox;
   if ((access != undefined) && (secret != undefined)){
     document.getElementById("AWSsecret").value = secret;
     document.getElementById("AWSaccess").value = access;
