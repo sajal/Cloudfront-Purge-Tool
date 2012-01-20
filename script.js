@@ -2,8 +2,8 @@
 window.pendinginvalidations = [];
 
 var errormessages = {
-  MalformedInput: "the box was prolly blank...",
-  InvalidArgument: "some path was wrong!!",
+  MalformedInput: "Please enter something in the box and submit again.",
+  InvalidArgument: "The path must start with a / and special characters (e.g. comma or space) must be urlencoded. Please correct and try again.",
   SignatureDoesNotMatch: "Please check your Secret and try again."
 }
 
