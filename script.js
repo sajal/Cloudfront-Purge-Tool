@@ -1,7 +1,18 @@
 
 window.pendinginvalidations = [];
 
+var errormessages = {
+  MalformedInput: "the box was prolly blank...",
+  InvalidArgument: "some path was wrong!!"
+}
 
+var getErrorMsg = function(error){
+  if (errormessages[error.code] != undefined){
+    return errormessages[error.code];
+  } else {
+    return error.message;
+  }
+}
 
 var croncheck = function(){
   // checks pengind invalidations every minute
@@ -63,7 +74,7 @@ var placepurgereq = function(box){
   var errorhandler = function(error){
     invalspinner.style.display = "none";
     invalerror.style.display = "block";
-    invalerror.innerHTML = error.message;
+    invalerror.innerHTML = getErrorMsg(error);
   }
   cfobj.AddNewPurgeRequest(currentdist, flist, function(res){
     invalspinner.style.display = "none";
@@ -252,7 +263,7 @@ var auth = function(){
 
   cfobj.getAllDistributions(success, function(error){
     document.getElementById("loginspinner").style.display = "none";
-    document.getElementById("loginerror").innerHTML = error.message;
+    document.getElementById("loginerror").innerHTML = getErrorMsg(error);
   });
 }
 
