@@ -150,7 +150,7 @@ var updatedistlist = function(dist){
     id = ui.selected.getElementsByClassName("id")[0].innerHTML;
     window.currentdist = id;
     cfobj.getAllInvalidations(id, updateinvalidations);
-    document.getElementById("invalidations").innerHTML = '<span id="invallistspinner" >imagine me spinning</span>';
+    document.getElementById("invalidations").innerHTML = '<span id="invallistspinner" ><img src="spinner-16x16.gif" width="16" height="16">Loading your last purge requests ...</span>';
 
   });
 
