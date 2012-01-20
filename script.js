@@ -4,7 +4,7 @@ window.pendinginvalidations = [];
 var errormessages = {
   MalformedInput: "the box was prolly blank...",
   InvalidArgument: "some path was wrong!!",
-  SignatureDoesNotMatch: "SignatureDoesNotMatch. meh"
+  SignatureDoesNotMatch: "Please check your Secret and try again."
 }
 
 var getErrorMsg = function(error){
@@ -264,6 +264,7 @@ var auth = function(){
 
   cfobj.getAllDistributions(success, function(error){
     document.getElementById("loginspinner").style.display = "none";
+    document.getElementById("loginerror").style.display = "block";
     document.getElementById("loginerror").innerHTML = getErrorMsg(error);
   });
 }
