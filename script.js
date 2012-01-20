@@ -49,19 +49,25 @@ var invaldetails = function(){
 }
 
 var placepurgereq = function(box){
-  document.getElementById("invalspinner").style.display = "";
-  var flist = document.getElementById("csvpathlist").value;
-  document.getElementById("invalerror").innerHTML = "";
+  var invalspinner = document.getElementById("invalspinner"),
+      invalerror = document.getElementById("invalerror"),
+      flist = document.getElementById("csvpathlist").value;
+
+  invalspinner.style.display = "";
+  invalerror.innerHTML = "";
+  
   console.log(flist);
   console.log(currentdist);
+  
   var errorhandler = function(error){
-    document.getElementById("invalspinner").style.display = "none";
-    document.getElementById("invalerror").innerHTML = error.message;
+    invalspinner.style.display = "none";
+    invalerror.style.display = "";
+    invalerror.innerHTML = error.message;
   }
   cfobj.AddNewPurgeRequest(currentdist, flist, function(res){
-    document.getElementById("invalspinner").style.display = "none";
+    invalspinner.style.display = "none";
     console.log(res);
-    document.getElementById("csvpathlist").value = "";
+    flist = "";
     distributionclickhandler(currentdist);
   }, errorhandler );
 }
@@ -181,7 +187,7 @@ var updateinvalidations = function(invals){
     invalidations.appendChild(ol);
 
     var indexcur = searchobjlist(pendinginvalidations, invals[i].Id["#text"]);
-    if (invals[i].Status["#text"] == "In progress"){
+    if (invals[i].Status["#text"] == "InProgress"){
       // current invalidation is in progress
       if (indexcur == -1){
         //current invalidation was not discovered earlier

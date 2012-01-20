@@ -60,7 +60,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .float-left { float:left; }
 .float-right { float:right; }
-
+.error { padding:3px; background:#BE4027; color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
 
 /* Remove styles from jQuery UI */
 .ui-widget-header { border:none; background:none; color:#000; }
@@ -106,6 +106,7 @@ input[type="submit"]:active { position:relative; top:1px; }
 .invalbox:hover { cursor:pointer;}
 #invallist .ui-selected { background:#eee; /*color:#f7a80d;*/ }
 .invalbox .id { color:#222; }
+#invalspinner, #invalerror { margin-top:10px; }
 
 /* in html/js, we can remove the .ui-selectee, i think */
 

@@ -37,7 +37,7 @@
       <input id="savecredentials" type="checkbox" style="float:left; position:relative; top:10px; margin:0 5px 0 10px;">Save credentials in this browser (<a href="#">not recommended</a>)<!-- links to popup window explaining how we save it and why risky -->
     </div>
     <span id="loginspinner" style="display:none">imagine me spinning</span>
-    <span id="loginerror" class="error"></span>
+    <span id="loginerror" class="error" style="display:none"></span>
   </div>
   	
   <div id="container">
@@ -54,8 +54,8 @@
           <textarea id="csvpathlist" style="width:100%;height:100px;display:block;"></textarea>
           <span class="note">Separate multiple paths using a comma</span>
           <input class="clearfix" type="submit" value="Submit" onclick="placepurgereq(this)">
-          <span id="invalspinner" style="display:none">imagine me spinning</span>
-          <span id="invalerror" class="error"></span>
+          <div id="invalspinner" style="display:none"><img src="spinner-16x16.gif" width="16" height="16">Loading ...</div>
+          <div id="invalerror" class="error" style="display:none"></div>
         </div>
         <div id="invaldetails" class="ui-widget-content" style="width:100%;display:none;">
           <h3 class="ui-widget-header">Purge details</h3>
