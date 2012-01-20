@@ -54,6 +54,7 @@ var placepurgereq = function(box){
       flist = document.getElementById("csvpathlist").value;
 
   invalspinner.style.display = "";
+  invalerror.style.display = "none";
   invalerror.innerHTML = "";
   
   console.log(flist);
@@ -67,7 +68,7 @@ var placepurgereq = function(box){
   cfobj.AddNewPurgeRequest(currentdist, flist, function(res){
     invalspinner.style.display = "none";
     console.log(res);
-    flist = "";
+    document.getElementById("csvpathlist").value = "";
     distributionclickhandler(currentdist);
   }, errorhandler );
 }

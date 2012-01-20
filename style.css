@@ -60,7 +60,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .float-left { float:left; }
 .float-right { float:right; }
-.error { padding:3px; background:#BE4027; color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
+.error { padding:3px; background:#BE4027; color:#fff; border:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
 
 /* Remove styles from jQuery UI */
 .ui-widget-header { border:none; background:none; color:#000; }
