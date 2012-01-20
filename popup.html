@@ -20,7 +20,7 @@
 				<a href="http://www.cdnplanet.com/" target="_blank"><img src="cdnplanet-logo-blue-w132-h20.png" width="132" height="20" style="margin-right:20px;"></a> <img src="cf-purge-tool.png">
 			</div>
 			<div class="header-right">
-				<a href="#">Help</a>
+				<a id="help" href="#">Help</a>
 			</div>
 		</header>
 	</div>
@@ -36,7 +36,7 @@
       <input class="float-left" type="submit" value="Sign in" onclick="auth()">
       <input id="savecredentials" type="checkbox" style="float:left; position:relative; top:10px; margin:0 5px 0 10px;">Save credentials in this browser (<a href="#">not recommended</a>)<!-- links to popup window explaining how we save it and why risky -->
     </div>
-    <span id="loginspinner" style="display:none"><img src="spinner-16x16.gif" width="16" height="16">Waiting for response from Cloudfront ...</span>
+    <span id="loginspinner" style="display:none"><img src="spinner-16x16.gif" width="16" height="16"> Waiting for response from Cloudfront ...</span>
     <span id="loginerror" class="error" style="display:none"></span>
   </div>
   	
@@ -54,7 +54,7 @@
           <textarea id="csvpathlist" style="width:100%;height:100px;display:block;"></textarea>
           <span class="note">Separate multiple paths using a comma</span>
           <input class="clearfix" type="submit" value="Submit" onclick="placepurgereq(this)">
-          <div id="invalspinner" style="display:none"><img src="spinner-16x16.gif" width="16" height="16">Waiting for response from Cloudfront ...</div>
+          <div id="invalspinner" style="display:none"><img src="spinner-16x16.gif" width="16" height="16"> Waiting for response from Cloudfront ...</div>
           <div id="invalerror" class="error" style="display:none"></div>
         </div>
         <div id="invaldetails" class="ui-widget-content" style="width:100%;display:none;">
@@ -71,6 +71,12 @@
   </div>
   
 </body>
+<script>
+function launchHelpWindow(){
+  window.open('help.html','name','width=600,height=500');
+}
+document.getElementById("help").addEventListener("click",launchHelpWindow,false);
+</script>
 </html>
 <!--
 
@@ -78,11 +84,24 @@ Help:
 
 > Email us or tweet us
 
-1. Why do you recommend to not store my Secret and Key on my computer?
+x. What is Access and Secret?
+Instructions on how to get them ... suggest them to use IAM to make new key with only the relavent permissions
+http://aws.amazon.com/iam/
+
+1. Do you store my AWS API credentials?
+No. We can't and we don't want to. You installed a Chrome extension in your browser and that is where the credentials can be stored (see next FAQ item). The Chrome extension runs on your computer and sends & receives info directly to and from AWS. You can view the source code of this extension on Github.
+
+
+x. Why do you recommend to not store my Secret and Key on my computer?
+
 
 2. Why can I only see the status of my last 20 purge requests, and not more?
 
-3.  
+3. I see entries in the "Purge Request Status" column, but have never used this tool before. How is that possible?
+
+3. How can I turn off the notifications in Chrome?
+
+
 
 
 -->
