@@ -83,7 +83,9 @@ var updateinvaldetails = function(obj){
     }
     paths = patharr.join(",")
   }
-  
+  if (status == "InProgress"){
+    status = "In Progress";
+  }
   var inval = $("#invaldetails")[0];
   inval.innerHTML = '<h3 class="ui-widget-header ui-corner-all">Purge Details</h3>Id: ' + id + "<br>Created : " + created + "<br>Files: " + paths + " <br>Status: " + status
   $( "#invaldetails" ).effect( "slide", {}, 500 );
@@ -173,7 +175,12 @@ var updateinvalidations = function(invals){
     var st = document.createElement('div');
     st.className = invals[i].Status["#text"];
     //box.classList.add(invals[i].Status["#text"]);
-    st.appendChild(document.createTextNode(invals[i].Status["#text"]));
+    var status = invals[i].Status["#text"];
+    if (status == "InProgress"){
+      status = "In Progress";
+    }
+
+    st.appendChild(document.createTextNode(status));
     box.appendChild(el);
     box.appendChild(st);
     //box.onclick = invaldetails;
