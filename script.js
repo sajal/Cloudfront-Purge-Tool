@@ -160,7 +160,7 @@ var updateinvalidations = function(invals){
   //<h3 class="ui-widget-header ui-corner-all">Invalidations</h3>
   title = document.createElement('h3');
   title.className = "ui-widget-header ui-corner-all";
-  title.appendChild(document.createTextNode("Invalidations"));
+  title.appendChild(document.createTextNode("Purge Request Status"));
   invalidations.appendChild(title);
   var ol = document.createElement('ul');
   ol.id = "invallist";
@@ -181,7 +181,7 @@ var updateinvalidations = function(invals){
     invalidations.appendChild(ol);
 
     var indexcur = searchobjlist(pendinginvalidations, invals[i].Id["#text"]);
-    if (invals[i].Status["#text"] == "InProgress"){
+    if (invals[i].Status["#text"] == "In progress"){
       // current invalidation is in progress
       if (indexcur == -1){
         //current invalidation was not discovered earlier

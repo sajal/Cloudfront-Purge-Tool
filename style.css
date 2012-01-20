@@ -58,6 +58,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
+.float-left { float:left; }
+.float-right { float:right; }
+
+
 /* Remove styles from jQuery UI */
 .ui-widget-header { border:none; background:none; color:#000; }
 .ui-widget-content { background:none; border:none; }
@@ -72,16 +76,15 @@ header	{ line-height:1.8em; vertical-align:middle; overflow:hidden;  }
 .header-right	{ float:right; margin-bottom:0px; margin-left:20px; text-align:right; font-size:85%; color:#aaa; position:relative; top:0px; }
 .header-left img { position:relative; top:2px; }
 
-h3  { margin:0; font-size:1.2em; font-weight:bold; }
+h3  { margin:0 0 10px 0; font-size:120%; font-weight:bold; }
 #auth { padding:10px; }
 .signin { margin:15px 0; }
 .signin-label { margin:3px 0; font-weight:bold; }
 .signin-text { width:400px; height:30px; margin:0px 0; padding:3px; font-size:1em;}
-#auth input[type="submit"] { width:100px; height:30px; background-color:#690; }
-#auth input[type="submit"] { width:100px; height:32px; display:block; margin-bottom:0px; margin-right:6px; padding:6px 3px; border:none; color:#FFF; font-weight:bold; font-size: 1.3em; background-color:#690; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
-#auth input[type="submit"]:hover { background-color: #1c778a; }
-#auth input[type="submit"]:focus { background-color:#1c778a; }
-#auth input[type="submit"]:active { position:relative; top:1px; }
+.note { height:30px; line-height:30px; font-size:0.8em; }
+input[type="submit"] { width:100px; height:30px; display:block; margin-bottom:0px; margin-right:6px; padding:6px 3px; border:none; color:#FFF; font-weight:bold; font-size:14px; background-color:#690; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; } input[type="submit"]:hover { background-color: #1c778a; }
+input[type="submit"]:focus { background-color:#1c778a; }
+input[type="submit"]:active { position:relative; top:1px; }
 
 #container { width:100%; padding:10px; display:table; }
 #row  { display:table-row; }
@@ -90,24 +93,23 @@ h3  { margin:0; font-size:1.2em; font-weight:bold; }
 #distlist .ui-selecting { background:#eee; }
 #distlist .ui-selected { background:#eee; }
 #distlist { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-.distbox { margin-top:5px; padding:3px; }
-.distbox .id { color:#f7a80d; }
+.distbox { width:300px; margin-top:5px; padding:3px; }
+.distbox:hover { cursor:pointer;}
+.distbox .id { color:#1C778A; font-weight:bold; text-decoration:underline; } /* f7a8od */
 .distbox .cnames { margin-left:0px; }
 
-#invallist { list-style-type:none; margin:0; padding:0; width:60%; }
+#newpurge { margin-bottom:20px; }
+#newinval { width:100%; padding:0 10px; }
 
-.invalbox { margin:5px 0; padding:3px; }
+#invallist { list-style-type:none; margin:0; padding:0; width:60%; }
+.invalbox { width:220px; margin:5px 0; padding:3px; }
+.invalbox:hover { cursor:pointer;}
 #invallist .ui-selected { background:#eee; /*color:#f7a80d;*/ }
 .invalbox .id { color:#222; }
 
 /* in html/js, we can remove the .ui-selectee, i think */
 
 /* #distlist li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }*/
-
-.distbox { width:300px; }
-.invalbox { width:200px; }
-
-#newinval { width:100%; padding:0 10px; }
 
 .Completed { color:#690; }
 .InProgress { color:#c00; }
