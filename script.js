@@ -84,7 +84,7 @@ var updateinvaldetails = function(obj){
     paths = patharr.join(",")
   }
   if (status == "InProgress"){
-    status = "In Progress";
+    status = "In progress";
   }
   var inval = $("#invaldetails")[0];
   inval.innerHTML = '<h3 class="ui-widget-header ui-corner-all">Purge Details</h3>Id: ' + id + "<br>Created : " + created + "<br>Files: " + paths + " <br>Status: " + status
@@ -177,7 +177,7 @@ var updateinvalidations = function(invals){
     //box.classList.add(invals[i].Status["#text"]);
     var status = invals[i].Status["#text"];
     if (status == "InProgress"){
-      status = "In Progress";
+      status = "In progress";
     }
 
     st.appendChild(document.createTextNode(status));
@@ -188,7 +188,7 @@ var updateinvalidations = function(invals){
     invalidations.appendChild(ol);
 
     var indexcur = searchobjlist(pendinginvalidations, invals[i].Id["#text"]);
-    if (invals[i].Status["#text"] == "In progress"){
+    if (invals[i].Status["#text"] == "InProgress"){
       // current invalidation is in progress
       if (indexcur == -1){
         //current invalidation was not discovered earlier
