@@ -3,7 +3,8 @@ window.pendinginvalidations = [];
 
 var errormessages = {
   MalformedInput: "the box was prolly blank...",
-  InvalidArgument: "some path was wrong!!"
+  InvalidArgument: "some path was wrong!!",
+  SignatureDoesNotMatch: "SignatureDoesNotMatch. meh"
 }
 
 var getErrorMsg = function(error){

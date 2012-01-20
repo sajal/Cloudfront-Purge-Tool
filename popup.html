@@ -12,7 +12,7 @@
   
   <script>
   /* Track one pageview in Google Analytics every time the Chrome extension main screen is opened */
-  var _gaq=[['_setAccount','UA-26004955-1'],['_setDomainName','www.cdnplanet.com'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));
+  var _gaq=[['_setAccount','UA-26004955-1'],['_setDomainName','www.cdnplanet.com'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='http://www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
 
 </head>
@@ -82,7 +82,7 @@ function launchHelpWindow(){
 }
 function launchHelpWindowLocalstorage(){
   window.open('help.html#localstorage','name','width=600,height=200');
-  _gaq.push(["_trackEvent","Tools","CF Purge Tool","string",,!0])
+  // _gaq.push(["_trackEvent","Tools","CF Purge Tool","string",,!0])
 }
 document.getElementById("help").addEventListener("click",launchHelpWindow,false);
 document.getElementById("ls").addEventListener("click",launchHelpWindowLocalstorage,false);
@@ -90,6 +90,6 @@ document.getElementById("ls").addEventListener("click",launchHelpWindowLocalstor
 </html>
 <!--
 
-ToDo: add GA code
+ToDo: add GA code for Event tracking
 
 -->
