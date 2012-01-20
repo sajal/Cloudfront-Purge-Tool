@@ -2,6 +2,9 @@
 <head>
   <title>CDN Purge tool - CDN Planet</title>
   <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  <style>
+  p { font-size:0.9em; }
+  </style>
 </head>
 
 <body>
@@ -16,14 +19,31 @@
   
   
   <div id="container">
-    <h3>Help</h3>
+    <h2>Help</h2>
     
-    <h4>What is Access and Secret?</h4>
-    <p>This is the answer
+    <a name="acc-sec"></a><h4>What is Access and Secret?</h4>
+    <p>Instructions on how to get them ... suggest them to use IAM to make new key with only the relavent permissions
+http://aws.amazon.com/iam/
     </p>
     
-    <h4>What is Access and Secret?</h4>
-    <p>Boo!
+    <a name="store-cred"></a><h4>Do you store my AWS API credentials?</h4>
+    <p>No. We can't and we don't want to. You installed a Chrome extension in your browser and that is where the credentials can be stored (see next FAQ item). The Chrome extension runs on your computer and sends &amp; receives info directly to and from AWS (over HTTPS). You can view the source code of this extension on Github: <a href="https://github.com/sajal/Cloudfront-Purge-Tool">https://github.com/sajal/Cloudfront-Purge-Tool</a>
+    </p>
+    
+    <a name="localstorage"></a><h4>Why do you recommend to not store my Secret and Key on my computer?</h4>
+    <p>
+    </p>
+    
+    <a name="why-20"></a><h4>Why can I only see the status of my last 20 purge requests, and not more?</h4>
+    <p>
+    </p>
+    
+    <a name="huh"></a><h4>I see entries in the "Purge Request Status" column, but have never used this tool before. How is that possible?</h4>
+    <p>!
+    </p>
+    
+    <a name="notifications"></a><h4>How can I turn off the notifications in Chrome?</h4>
+    <p>
     </p>
     
   </div>

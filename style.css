@@ -77,6 +77,9 @@ header	{ line-height:1.8em; vertical-align:middle; overflow:hidden;  }
 .header-left img { position:relative; top:2px; }
 
 h3  { margin:0 0 10px 0; font-size:120%; font-weight:bold; }
+h4  { margin:0 0 2px 0; font-size:100%; font-weight:bold; }
+p { margin:0 0 15px 0; }
+
 #auth { padding:10px; }
 .signin { margin:15px 0; }
 .signin-label { margin:3px 0; font-weight:bold; }
