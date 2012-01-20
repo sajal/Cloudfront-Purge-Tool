@@ -1,1 +1,6 @@
-Work in progress... 
+
+==Test instructions==
+
+1) Clone this repository into a directory
+2) Load this directory as a chrome extension (Instructions: http://code.google.com/chrome/extensions/getstarted.html#load step 4 )
+3) Login using wour AWS Access key ID and Secret Access Key
