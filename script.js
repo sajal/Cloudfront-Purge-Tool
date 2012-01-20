@@ -268,7 +268,7 @@ $(document).ready(function() {
   */
   var access = localStorage.access;
   var secret = localStorage.secret;
-  document.getElementById("savecredentials").checked = localStorage.savebox;
+  document.getElementById("savecredentials").checked = JSON.parse(localStorage.savebox);
   if ((access != undefined) && (secret != undefined)){
     document.getElementById("AWSsecret").value = secret;
     document.getElementById("AWSaccess").value = access;
