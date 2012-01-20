@@ -73,7 +73,7 @@ header	{ line-height:1.8em; vertical-align:middle; overflow:hidden;  }
 .header-left img { position:relative; top:2px; }
 
 h3  { margin:0; font-size:1.2em; font-weight:bold; }
-#auth { margin:10px; }
+#auth { padding:10px; }
 .signin { margin:15px 0; }
 .signin-label { margin:3px 0; font-weight:bold; }
 .signin-text { width:400px; height:30px; margin:0px 0; padding:3px; font-size:1em;}
@@ -83,28 +83,31 @@ h3  { margin:0; font-size:1.2em; font-weight:bold; }
 #auth input[type="submit"]:focus { background-color:#1c778a; }
 #auth input[type="submit"]:active { position:relative; top:1px; }
 
-#container { width:100%; margin:10px; display:table; }
+#container { width:100%; padding:10px; display:table; }
 #row  { display:table-row; }
-.column { display:table-cell; padding:5px 5px 5px 0; border:#ddd 1px solid; border:none;}
+.column { display:table-cell; padding:0; border:#ddd 1px solid; border:none;}
 
 #distlist .ui-selecting { background:#eee; }
 #distlist .ui-selected { background:#eee; }
 #distlist { list-style-type: none; margin: 0; padding: 0; width: 60%; }
 .distbox { margin-top:5px; padding:3px; }
-.distbox .id { color:#EF621A; }
+.distbox .id { color:#f7a80d; }
 .distbox .cnames { margin-left:0px; }
 
-#invallist .ui-selecting { background:#FECA40; }
-#invallist .ui-selected { background:#F39814; color:white; }
 #invallist { list-style-type:none; margin:0; padding:0; width:60%; }
 
+.invalbox { margin:5px 0; padding:3px; }
+#invallist .ui-selected { background:#eee; /*color:#f7a80d;*/ }
+.invalbox .id { color:#222; }
+
+/* in html/js, we can remove the .ui-selectee, i think */
 
 /* #distlist li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }*/
 
 .distbox { width:300px; }
 .invalbox { width:200px; }
 
-#newinval { width:100%; }
+#newinval { width:100%; padding:0 10px; }
 
-.Completed { color:#0c0; }
+.Completed { color:#690; }
 .InProgress { color:#c00; }
