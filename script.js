@@ -53,7 +53,7 @@ var placepurgereq = function(box){
       invalerror = document.getElementById("invalerror"),
       flist = document.getElementById("csvpathlist").value;
 
-  invalspinner.style.display = "";
+  invalspinner.style.display = "block";
   invalerror.style.display = "none";
   invalerror.innerHTML = "";
   
@@ -62,7 +62,7 @@ var placepurgereq = function(box){
   
   var errorhandler = function(error){
     invalspinner.style.display = "none";
-    invalerror.style.display = "";
+    invalerror.style.display = "block";
     invalerror.innerHTML = error.message;
   }
   cfobj.AddNewPurgeRequest(currentdist, flist, function(res){
@@ -159,7 +159,7 @@ var updatedistlist = function(dist){
 var updateinvalidations = function(invals){
   console.log(invals);
   var invalidations = document.getElementById("invalidations");
-  invalidations.style.display = "";
+  invalidations.style.display = "block";
   //remove all childrens if exists
   if ( invalidations.hasChildNodes() ){
     while ( invalidations.childNodes.length >= 1 ){
@@ -229,7 +229,7 @@ var searchobjlist = function(list, id){
 var auth = function(){
   var secret = document.getElementById("AWSsecret").value
   var access = document.getElementById("AWSaccess").value
-  document.getElementById("loginspinner").style.display = "";
+  document.getElementById("loginspinner").style.display = "block";
   window.cfobj = new cloudfrontapi(access, secret);
   localStorage.savebox = document.getElementById("savecredentials").checked;
   if (document.getElementById("savecredentials").checked){

@@ -88,11 +88,11 @@ input[type="submit"]:active { position:relative; top:1px; }
 
 #container { width:100%; padding:10px; display:table; }
 #row  { display:table-row; }
-.column { display:table-cell; padding:0; border:#ddd 1px solid; border:none;}
+.column { display:table-cell; padding:0; border:none;}
 
 #distlist .ui-selecting { background:#eee; }
 #distlist .ui-selected { background:#eee; }
-#distlist { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#distlist { list-style-type: none; margin: 0; padding: 0; }
 .distbox { width:300px; margin-top:5px; padding:3px; }
 .distbox:hover { cursor:pointer;}
 .distbox .id { color:#1C778A; font-weight:bold; text-decoration:underline; } /* f7a8od */
@@ -101,7 +101,8 @@ input[type="submit"]:active { position:relative; top:1px; }
 #newpurge { margin-bottom:20px; }
 #newinval { width:100%; padding:0 10px; }
 
-#invallist { list-style-type:none; margin:0; padding:0; width:60%; }
+#invalidations { width:226px; }
+#invallist { list-style-type:none; margin:0; padding:0; }
 .invalbox { width:220px; margin:5px 0; padding:3px; }
 .invalbox:hover { cursor:pointer;}
 #invallist .ui-selected { background:#eee; /*color:#f7a80d;*/ }
