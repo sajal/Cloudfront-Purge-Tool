@@ -78,7 +78,8 @@ var cloudfrontapi = function(aws_access, aws_secret){
       if ((req.status != 200) && (req.status != 201)){
         error = {
           status:req.status,
-          message: req.responseXML.getElementsByTagName("Message")[0].textContent
+          message: req.responseXML.getElementsByTagName("Message")[0].textContent,
+          code: req.responseXML.getElementsByTagName("Code")[0].textContent
         }
       }
       console.log(error);
