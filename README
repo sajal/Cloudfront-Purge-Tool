@@ -1,6 +1,6 @@
 
 ==Test instructions==
 
-1) Clone this repository into a directory
+1) Clone this repository into a directory (Alternatively download zip file : https://github.com/sajal/Cloudfront-Purge-Tool/zipball/master )
 2) Load this directory as a chrome extension (Instructions: http://code.google.com/chrome/extensions/getstarted.html#load step 4 )
-3) Login using wour AWS Access key ID and Secret Access Key
+3) Login using your AWS Access key ID and Secret Access Key
