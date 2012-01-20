@@ -1,7 +1,7 @@
 {
   "name": "Cloudfront Purge Tool",
   "version": "0.1",
-  "description": "Purges assets from cloudfront.",
+  "description": "Easily purge (invalidate) files from Amazon Cloudfront, using an intuitive, secure interface.",
   "default_icon": "128.png",
   "icons": {
     "16": "16.png",
