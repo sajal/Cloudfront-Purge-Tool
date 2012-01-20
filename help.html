@@ -27,28 +27,28 @@
     <p>There is an FAQ below. Please try that first. No success? Contact us via info@cdnplanet.com or send a tweet to <a href="https://twitter.com/#!/cdnplanet">@cdnplanet</a>.</p>
     
     <a name="acc-sec"></a><h4>What is Access and Secret?</h4>
-    <p>Instructions on how to get them ... suggest them to use IAM to make new key with only the relavent permissions
-http://aws.amazon.com/iam/
+    <p>These are the 'username' and 'password' you need to log in to AWS. We recommend you use IAM to create a new key with only the relevant permissions for purging.<br>
+<a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>
     </p>
     
     <a name="store-cred"></a><h4>Do you store my AWS API credentials?</h4>
     <p>No. We can't and we don't want to. You installed a Chrome extension in your browser and that is where the credentials can be stored (see next FAQ item). The Chrome extension runs on your computer and sends &amp; receives info directly to and from AWS (over HTTPS). You can view the source code of this extension on Github: <a href="https://github.com/sajal/Cloudfront-Purge-Tool">https://github.com/sajal/Cloudfront-Purge-Tool</a>
     </p>
     
-    <a name="localstorage"></a><h4>Why do you recommend to not store my Secret and Key on my computer?</h4>
-    <p>
+    <a name="localstorage"></a><h4>Why do you recommend to *not* store my Secret and Key on my computer?</h4>
+    <p>The credentials will be stored as plain text in your browser. If you leave your computer unattended, someone can (easily) read the Access and Secret keys and use that to do bad things.
     </p>
     
     <a name="why-20"></a><h4>Why can I only see the status of my last 20 purge requests, and not more?</h4>
-    <p>
+    <p>We capped it at 20, because we think that is fine.
     </p>
     
     <a name="huh"></a><h4>I see entries in the "Purge Request Status" column, but have never used this tool before. How is that possible?</h4>
-    <p>!
+    <p>We show the last (max 20) purge request made in this distribution, not necessarily by using this tool.
     </p>
     
     <a name="notifications"></a><h4>How can I turn off the notifications in Chrome?</h4>
-    <p>
+    <p>Next time you get a notification, click the little 'tools' icon and select 'Disable'.
     </p>
     
   </div>
