@@ -93,6 +93,7 @@ input[type="submit"]:active { position:relative; top:1px; }
 #row  { display:table-row; }
 .column { display:table-cell; padding:0; border:none;}
 
+#distributions { width:306px; }
 #distlist .ui-selecting { background:#eee; }
 #distlist .ui-selected { background:#eee; }
 #distlist { list-style-type: none; margin: 0; padding: 0; }
@@ -101,17 +102,30 @@ input[type="submit"]:active { position:relative; top:1px; }
 .distbox .id { color:#1C778A; font-weight:bold; text-decoration:underline; } /* f7a8od */
 .distbox .cnames { margin-left:0px; }
 
+#newinval { width:400px; padding:0 10px; }
 #newpurge { margin-bottom:20px; }
-#newinval { width:100%; padding:0 10px; }
 
 #invalidations { width:226px; }
 #invallist { list-style-type:none; margin:0; padding:0; }
-.invalbox { width:220px; margin:5px 0; padding:3px; }
+.invalbox { margin:0px 0; padding:0; }
 .invalbox:hover { cursor:pointer;}
 #invallist .ui-selected { background:#eee; /*color:#f7a80d;*/ }
-.invalbox .id { color:#222; }
+.invalbox .id { width: 190px; float:left; margin:5px 0; color:#1C778A; text-decoration:underline; }
+.invalbox .status { width: 190px; float:left; margin:5px 0; }
+/*.invalbox .details { width: 80px; float:left; color:#1C778A; text-decoration:underline; }*/
+
 #invalspinner, #invalerror { margin-top:10px; }
 
+#invaldetails { width: 214px; word-wrap: break-word; }
+@media only screen and (min-width:1060px) {
+  #invaldetails { width: 314px; }
+}
+@media only screen and (min-width:1160px) {
+  #invaldetails { width: 414px; }
+}
+@media only screen and (min-width:1260px) {
+  #invaldetails { width: 514px; }
+}
 /* in html/js, we can remove the .ui-selectee, i think */
 
 /* #distlist li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }*/

@@ -159,11 +159,13 @@ var updatedistlist = function(dist){
   distributions.style.display="";
   $( "#distlist" ).selectable();
   $( "#distlist" ).bind( "selectableselected", function(event, ui) {
+    document.getElementById("invaldetails").innerHTML = "";
+    document.getElementById("invaldetails").style.display = "block";
+
     id = ui.selected.getElementsByClassName("id")[0].innerHTML;
     window.currentdist = id;
     cfobj.getAllInvalidations(id, updateinvalidations);
-    document.getElementById("invalidations").innerHTML = '<span id="invallistspinner" ><img src="spinner-16x16.gif" width="16" height="16">Loading your last purge requests ...</span>';
-
+    document.getElementById("invalidations").innerHTML = '<span id="invallistspinner" ><img src="spinner-16x16.gif" width="16" height="16">Loading your last purge requests ...</span>';    
   });
 
 }
@@ -181,27 +183,31 @@ var updateinvalidations = function(invals){
   //<h3 class="ui-widget-header ui-corner-all">Invalidations</h3>
   title = document.createElement('h3');
   title.className = "ui-widget-header ui-corner-all";
-  title.appendChild(document.createTextNode("Purge Request Status"));
+  title.appendChild(document.createTextNode("Status of Last Purge Requests"));
   invalidations.appendChild(title);
   var ol = document.createElement('ul');
   ol.id = "invallist";
   for (i=0;i<invals.length;i++){
-    var box = document.createElement('div');
+    var box = document.createElement('li');
     box.className = "invalbox";
     var el = document.createElement('div');
     el.className = "id";
     el.appendChild(document.createTextNode(invals[i].Id["#text"]));
     var st = document.createElement('div');
-    st.className = invals[i].Status["#text"];
+    st.className = "status " + invals[i].Status["#text"];
     //box.classList.add(invals[i].Status["#text"]);
     var status = invals[i].Status["#text"];
     if (status == "InProgress"){
       status = "In progress";
     }
+    /*var link = document.createElement('div');
+    link.className = "details";
+    link.appendChild(document.createTextNode("details")); */
 
     st.appendChild(document.createTextNode(status));
     box.appendChild(el);
     box.appendChild(st);
+    //box.appendChild(link);
     //box.onclick = invaldetails;
     ol.appendChild(box);
     invalidations.appendChild(ol);
