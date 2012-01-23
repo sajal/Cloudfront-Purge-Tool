@@ -1,18 +1,18 @@
 <html>
 <head>
-  <title>CDN Purge tool - CDN Planet</title>
-  <!--<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.17.custom.css" type="text/css" />-->
-  <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-  <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
-  <script src="js/jquery-ui-1.8.17.custom.min.js" type="text/javascript"></script>
-  <script type="text/javascript" src="2.5.3-crypto-sha1-hmac.js"></script>
+  <title>Cloudfront Purge Tool - CDN Planet</title>
+  <link rel="shortcut icon" href="16.png">
+  <link rel="stylesheet" href="style.css" media="screen">
+  <script src="js/jquery-1.7.1.min.js"></script>
+  <script src="js/jquery-ui-1.8.17.custom.min.js" ></script>
+  <script src="2.5.3-crypto-sha1-hmac.js"></script>
   <script src="xml2json.js"></script>
   <script src="cloudfrontapi.js"></script>
   <script src="script.js"></script>
   
   <script>
-  /* Track one pageview in Google Analytics every time the Chrome extension main screen is opened */
-  var _gaq=[['_setAccount','UA-26004955-1'],['_setDomainName','www.cdnplanet.com'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='http://www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));
+  /* Track one pageview in Google Analytics every time the Chrome extension main screen is opened; and, track Events in GA when user does certain things */
+  var _gaq=[['_setAccount','UA-26004955-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='https://ssl.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
 
 </head>
@@ -20,15 +20,15 @@
 <body>
 
   <div class="container cont-header">
-		<header>
-			<div class="header-left">
-				<a href="http://www.cdnplanet.com/" target="_blank"><img src="cdnplanet-logo-blue-w132-h20.png" width="132" height="20" style="margin-right:20px;"></a> <img src="cf-purge-tool.png">
-			</div>
-			<div class="header-right">
-				<a id="help" href="#">Help</a>
-			</div>
-		</header>
-	</div>
+	<header>
+		<div class="header-left">
+			<a href="http://www.cdnplanet.com/" target="_blank"><img src="cdnplanet-logo-blue-w132-h20.png" width="132" height="20" title="CDN Planet homepage" style="margin-right:20px;"></a> <img src="cf-purge-tool.png">
+		</div>
+		<div class="header-right">
+			<a id="help">Help</a>
+		</div>
+	</header>
+</div>
   
   <div id="auth">
     <div class="signin">
@@ -82,14 +82,10 @@ function launchHelpWindow(){
 }
 function launchHelpWindowLocalstorage(){
   window.open('help.html#localstorage','name','width=600,height=200');
-  // _gaq.push(["_trackEvent","Tools","CF Purge Tool","string",,!0])
+  _gaq.push(["_trackEvent","Tools","CF Purge Tool","Save credentials boo",,!0])
 }
 document.getElementById("help").addEventListener("click",launchHelpWindow,false);
 document.getElementById("ls").addEventListener("click",launchHelpWindowLocalstorage,false);
 </script>
 </html>
-<!--
-
-ToDo: add GA code for Event tracking
-
 -->

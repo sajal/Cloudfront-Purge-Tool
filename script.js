@@ -81,6 +81,7 @@ var placepurgereq = function(box){
     invalspinner.style.display = "none";
     console.log(res);
     document.getElementById("csvpathlist").value = "";
+	_gaq.push(["_trackEvent","Tools","CF Purge Tool","New purge request",,!0])
     distributionclickhandler(currentdist);
   }, errorhandler );
 }
@@ -108,6 +109,7 @@ var updateinvaldetails = function(obj){
   var inval = $("#invaldetails")[0];
   inval.innerHTML = '<h3 class="ui-widget-header ui-corner-all">Purge Details</h3>Id: ' + id + "<br>Created : " + created + "<br>Files: " + paths + " <br>Status: " + status
   $( "#invaldetails" ).effect( "slide", {}, 500 );
+  _gaq.push(["_trackEvent","Tools","CF Purge Tool","View purge details",,!0])
 }
 
 
@@ -265,6 +267,7 @@ var auth = function(){
     var loginbox = document.getElementById("auth")
     loginbox.style.display="none";
     updatedistlist(dist);
+	_gaq.push(["_trackEvent","Tools","CF Purge Tool","Sign in success",,!0])
     croncheck();
   }
 

@@ -1,5 +1,5 @@
 
-article, aside, details, footer, header, hgroup, nav, section { display: block; }
+header { display: block; }
 html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { margin:0; font-size:16px; line-height:1.4; background-color:#FFF; } /* line-height: 1.231; */
 body, button, input, select, textarea { font-family: 'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif; color: #444; }
@@ -126,9 +126,6 @@ input[type="submit"]:active { position:relative; top:1px; }
 @media only screen and (min-width:1260px) {
   #invaldetails { width: 514px; }
 }
-/* in html/js, we can remove the .ui-selectee, i think */
-
-/* #distlist li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }*/
 
 .Completed { color:#690; }
 .InProgress { color:#c00; }
