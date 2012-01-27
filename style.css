@@ -75,6 +75,7 @@ header	{ line-height:1.8em; vertical-align:middle; overflow:hidden;  }
 .header-left	{ float:left; margin-bottom:0px; }
 .header-right	{ float:right; margin-bottom:0px; margin-left:20px; text-align:right; font-size:85%; color:#aaa; position:relative; top:0px; }
 .header-left img { position:relative; top:2px; }
+#help:hover{ cursor: pointer; }
 
 h3  { margin:0 0 10px 0; font-size:120%; font-weight:bold; }
 h4  { margin:0 0 2px 0; font-size:100%; font-weight:bold; }
