@@ -31,6 +31,7 @@
 </div>
   
   <div id="auth">
+	<div class="fl-l m-r-50">
     <div class="signin">
       <div class="signin-label">Access:</div><input type="text" id="AWSaccess" class="signin-text">
     </div>
@@ -43,6 +44,38 @@
     </div>
     <span id="loginspinner" style="display:none"><img src="spinner-16x16.gif" width="16" height="16"> Waiting for response from Cloudfront ...</span>
     <span id="loginerror" class="error" style="display:none"></span>
+	</div>
+	
+	<div class="fl-l p-l-50 brdr-l-1eee">
+		<h3 class="m-t-10">CDN Planet Blog</h3>
+		<div id="feed"></div>
+		<script>
+			function showRss() {
+				var feed = new google.feeds.Feed("http://www.cdnplanet.com/blog/feed/");
+				feed.load(function(result) {
+					if (!result.error) {
+						var container = document.getElementById("feed");
+						for (var i = 0; i < result.feed.entries.length; i++) {
+							var entry = result.feed.entries[i];
+							var div = document.createElement("div");
+							div.innerHTML += "<p><a href='" + entry.link + "'>" + entry.title + "</a></p>";
+							container.appendChild(div);
+						}
+					}
+				});
+			}
+
+			function initLoader() {
+				var p = document.createElement("script");
+				p.src = "https://www.google.com/jsapi?key=ABQIAAAA5G2gXZmdQss3dIDbQV1KRRRE4Cjsdp205gIAOmTmnZiDinLSTxTm_ksescexqy51eJcCBjU1Vv9OFA&autoload={'modules':[{'name':'feeds','version':'1','callback':'showRss'}]}";		
+				p.type = "text/javascript";
+				var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(p, s);
+			}
+			initLoader();
+		</script>
+	</div>
+	
   </div>
   	
   <div id="container">

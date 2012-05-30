@@ -94,6 +94,12 @@ input[type="submit"]:active { position:relative; top:1px; }
 #row  { display:table-row; }
 .column { display:table-cell; padding:0; border:none;}
 
+.fl-l { float:left; }
+.m-t-10 { margin-top:10px; }
+.m-r-50 { margin-right:50px; }
+.p-l-50 { padding-left:50px; }
+.brdr-l-1eee { border-left:1px solid #EEE; }
+
 #distributions { width:306px; }
 #distlist .ui-selecting { background:#eee; }
 #distlist .ui-selected { background:#eee; }
