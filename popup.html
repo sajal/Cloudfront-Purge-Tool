@@ -23,6 +23,7 @@
 	<header>
 		<div class="header-left">
 			<a href="http://www.cdnplanet.com/" target="_blank"><img src="cdnplanet-logo-blue-w132-h20.png" width="132" height="20" title="CDN Planet homepage" style="margin-right:20px;"></a> <img src="cf-purge-tool.png">
+			<a id="tb" style="margin-left:100px; font-size:0.9em;">Faster purge times? Turbobytes!</a>
 		</div>
 		<div class="header-right">
 			<a id="help">Help</a>
@@ -58,7 +59,7 @@
 						for (var i = 0; i < result.feed.entries.length; i++) {
 							var entry = result.feed.entries[i];
 							var div = document.createElement("div");
-							div.innerHTML += "<p><a href='" + entry.link + "'>" + entry.title + "</a></p>";
+							div.innerHTML += "<p><a target='_blank' href='" + entry.link + "'>" + entry.title + "</a></p>";
 							container.appendChild(div);
 						}
 					}
@@ -102,6 +103,7 @@
 
       <div id="invaldetails" class="column ui-widget-content" style="display:none">
         <h3 class="ui-widget-header">Purge details</h3>
+		
       </div>
 
     </div>
@@ -113,11 +115,15 @@
 function launchHelpWindow(){
   window.open('help.html','name','width=600,height=500');
 }
+function launchTBWindow(){
+  window.open('turbobytes.html','name','width=600,height=500');
+}
 function launchHelpWindowLocalstorage(){
   window.open('help.html#localstorage','name','width=600,height=200');
   _gaq.push(["_trackEvent","Tools","CF Purge Tool","Save credentials boo",,!0])
 }
 document.getElementById("help").addEventListener("click",launchHelpWindow,false);
+document.getElementById("tb").addEventListener("click",launchTBWindow,false);
 document.getElementById("ls").addEventListener("click",launchHelpWindowLocalstorage,false);
 </script>
 </html>
