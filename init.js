@@ -42,7 +42,7 @@ function launchHelpWindowLocalstorage(){
   _gaq.push(["_trackEvent","Tools","CF Purge Tool","Save credentials boo",,!0])
 }
 document.getElementById("help").addEventListener("click",launchHelpWindow,false);
-document.getElementById("tb").addEventListener("click",launchTBWindow,false);
+//document.getElementById("tb").addEventListener("click",launchTBWindow,false);
 document.getElementById("ls").addEventListener("click",launchHelpWindowLocalstorage,false);
 
 document.getElementById("signinbutton").addEventListener("click",auth,false);
