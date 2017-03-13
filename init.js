@@ -6,24 +6,19 @@
   var _gaq=[['_setAccount','UA-26004955-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='https://ssl.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));
 
 
-            function showRss() {
-                var feed = new google.feeds.Feed("http://www.cdnplanet.com/blog/feed/");
-                feed.load(function(result) {
-                    if (!result.error) {
-                        var container = document.getElementById("feed");
-                        for (var i = 0; i < result.feed.entries.length; i++) {
-                            var entry = result.feed.entries[i];
-                            var div = document.createElement("div");
-                            div.innerHTML += "<p><a target='_blank' href='" + entry.link + "'>" + entry.title + "</a></p>";
-                            container.appendChild(div);
-                        }
-                    }
-                });
+            function showRss(feed) {
+              var container = document.getElementById("feed");
+              for (var i = 0; i < feed.length; i++) {
+                  var entry = feed[i];
+                  var div = document.createElement("div");
+                  div.innerHTML += "<p><a target='_blank' href='" + entry.link + "'>" + entry.title + "</a></p>";
+                  container.appendChild(div);
+              }
             }
 
             function initLoader() {
                 var p = document.createElement("script");
-                p.src = "https://www.google.com/jsapi?key=ABQIAAAA5G2gXZmdQss3dIDbQV1KRRRE4Cjsdp205gIAOmTmnZiDinLSTxTm_ksescexqy51eJcCBjU1Vv9OFA&autoload={'modules':[{'name':'feeds','version':'1','callback':'showRss'}]}";       
+                p.src = "https://www.cdnplanet.com/blog/index.js";
                 p.type = "text/javascript";
                 var s = document.getElementsByTagName('script')[0];
                     s.parentNode.insertBefore(p, s);
